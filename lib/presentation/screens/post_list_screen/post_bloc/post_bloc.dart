@@ -3,14 +3,14 @@ import 'package:authors_collection/presentation/screens/post_list_screen/post_bl
 import 'package:authors_collection/presentation/screens/post_list_screen/post_bloc/post_states.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class DogListBloc extends Bloc<LoadingPostEvent, PostListState> {
+class PostListBloc extends Bloc<PostEvent, PostListState> {
   Repository repo;
-  DogListBloc(this.repo) : super(InitialState()) {
+  PostListBloc(this.repo) : super(InitialState()) {
     on<LoadingPostEvent>((event, emit) async {
       emit(LoadingPost());
+      await Future.delayed(const Duration(seconds: 3));
       try {
-        final breeds = await repo.fetchPost();
-        emit(LoadedPost(breeds));
+        emit(LoadedPost(await repo.fetchPost()));
       } catch (e) {
         emit(ErrorPost(e));
       }
