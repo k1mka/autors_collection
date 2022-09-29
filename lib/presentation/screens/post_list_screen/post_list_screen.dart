@@ -1,5 +1,6 @@
-import 'package:authors_collection/presentation/screens/list_titles_authors_screen/list_titles_authors_layout.dart';
 import 'package:flutter/material.dart';
+
+import 'post_list_layout.dart';
 
 class ListTitlesAuthorsScreen extends StatelessWidget {
   const ListTitlesAuthorsScreen({Key? key}) : super(key: key);
