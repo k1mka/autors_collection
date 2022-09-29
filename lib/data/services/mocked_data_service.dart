@@ -1,7 +1,7 @@
 import 'package:authors_collection/presentation/models/post_model.dart';
 
 abstract class DataService {
-  List<PostModel> fetchPost();
+  Future<List<PostModel>> fetchPost();
 }
 
 class MockedDataService implements DataService {
@@ -14,7 +14,7 @@ class MockedDataService implements DataService {
       'https://images.unsplash.com/photo-1664393633748-19ed89efdb4d?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzNjc4ODZ8MHwxfGFsbHw1fHx8fHx8Mnx8MTY2NDQzNzI4OQ&ixlib=rb-1.2.1&q=80';
 
   @override
-  List<PostModel> fetchPost() => [
+  Future<List<PostModel>> fetchPost() async => [
         for (var i = 0; i < 10; i++)
           PostModel(
               title: mockedTitle,

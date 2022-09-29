@@ -8,5 +8,5 @@ class RepositoryImpl implements Repository {
   RepositoryImpl(this.dataService);
 
   @override
-  List<PostModel> fetchPost() => dataService.fetchPost();
+  Future<List<PostModel>> fetchPost() => dataService.fetchPost();
 }
