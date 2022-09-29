@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'presentation/screens/list_titles_authors_screen/list_titles_authors_screen.dart';
+import 'presentation/screens/post_list_screen/post_list_screen.dart';
 
 class AuthorsCollectionsApp extends StatelessWidget {
   const AuthorsCollectionsApp({Key? key}) : super(key: key);
