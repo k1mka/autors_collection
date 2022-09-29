@@ -1,6 +1,7 @@
 import 'package:authors_collection/presentation/screens/post_list_screen/post_bloc/post_bloc.dart';
 import 'package:authors_collection/presentation/screens/post_list_screen/post_bloc/post_events.dart';
 import 'package:authors_collection/presentation/screens/post_list_screen/post_bloc/post_states.dart';
+import 'package:authors_collection/presentation/widgets/error_widget.dart';
 import 'package:authors_collection/presentation/widgets/post_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -32,7 +33,7 @@ class _PostListLayoutState extends State<PostListLayout> {
             if (state is InitialState) {
               return const Center(child: Text('expectation'));
             } else if (state is ErrorPost) {
-              return const Text('error'); // TODO: change to screen error
+              return const CatErrorWidget();
             } else if (state is LoadingPost) {
               return const CircularProgressIndicator();
             } else if (state is LoadedPost) {

@@ -8,12 +8,12 @@ class PostListBloc extends Bloc<PostEvent, PostListState> {
   PostListBloc(this.repo) : super(InitialState()) {
     on<LoadingPostEvent>((event, emit) async {
       emit(LoadingPost());
-      await Future.delayed(const Duration(seconds: 3));
-      try {
-        emit(LoadedPost(await repo.fetchPost()));
-      } catch (e) {
-        emit(ErrorPost(e));
-      }
+      // try {
+      emit(LoadedPost(await repo.fetchPost()));
+      // } catch (e) {
+      //
+      //   emit(ErrorPost(e));
+      // }
     });
   }
 }

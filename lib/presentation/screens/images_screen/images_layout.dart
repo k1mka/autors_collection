@@ -10,8 +10,11 @@ class ImageLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ImageWidget(
-        link: model.photoFull,
+      appBar: AppBar(),
+      body: Center(
+        child: ImageWidget(
+          link: model.photoFull,
+        ),
       ),
     );
   }

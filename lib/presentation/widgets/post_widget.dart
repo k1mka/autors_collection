@@ -9,35 +9,80 @@ class PostWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () => Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (_) => ImageScreen(model: model),
+    return Card(
+      child: InkWell(
+        onTap: () => Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (_) => ImageScreen(model: model),
+          ),
         ),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
         child: Center(
-          child: Card(
+          child: Padding(
+            padding: const EdgeInsets.all(4.0),
             child: Row(
               children: [
-                Image.network(
-                  model.photoIcon,
-                  width: 124,
-                  height: 120,
+                Expanded(
+                  flex: 1,
+                  child: Image.network(
+                    model.photoIcon,
+                    width: 124,
+                    height: 120,
+                    fit: BoxFit.cover,
+                  ),
                 ),
-                Text(
-                  model.title,
-                  style: const TextStyle(fontSize: 20),
+                Expanded(
+                  flex: 3,
+                  child: SizedBox(
+                    height: 120,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: _PostInfo(
+                        author: model.author,
+                        title: model.title,
+                      ),
+                    ),
+                  ),
                 ),
-                const SizedBox(width: 8),
-                Text(model.author, style: const TextStyle(fontSize: 20)),
               ],
             ),
           ),
         ),
       ),
+    );
+  }
+}
+
+class _PostInfo extends StatelessWidget {
+  final String? title;
+  final String author;
+
+  late final authorWidget = Text(
+    'by $author',
+    style: const TextStyle(fontSize: 20),
+  );
+
+  _PostInfo({
+    Key? key,
+    this.title,
+    required this.author,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    if (title == null) return Center(child: authorWidget);
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          title!,
+          textAlign: TextAlign.center,
+          style: const TextStyle(fontSize: 20),
+        ),
+        Align(alignment: Alignment.bottomCenter, child: authorWidget),
+      ],
     );
   }
 }
