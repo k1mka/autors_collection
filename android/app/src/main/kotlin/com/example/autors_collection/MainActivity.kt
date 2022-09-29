@@ -1,4 +1,4 @@
-package com.example.autors_collection
+package com.example.authors_collection
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -1,4 +1,4 @@
-# autors_collection
+# authors_collection
 
 A new Flutter project.
 

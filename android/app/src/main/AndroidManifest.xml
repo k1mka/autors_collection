@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.autors_collection">
+    package="com.example.authors_collection">
    <application
-        android:label="autors_collection"
+        android:label="authors_collection"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
