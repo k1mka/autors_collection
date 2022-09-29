@@ -10,7 +10,7 @@ class ImageLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(backgroundColor: Colors.black87),
       body: Center(
         child: ImageWidget(
           link: model.photoFull,
