@@ -13,5 +13,5 @@ class PostModel {
 
   @override
   String toString() =>
-      'PostModel{title: $title, author: $author, photoIcon: $photoIcon, photoFull: $photoFull}';
+      '{title: $title, author: $author, photoIcon: $photoIcon, photoFull: $photoFull}';
 }

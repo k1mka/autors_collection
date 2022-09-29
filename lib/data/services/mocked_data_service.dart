@@ -5,8 +5,8 @@ abstract class DataService {
 }
 
 class MockedDataService implements DataService {
-  final mockedTitle = 'Some Title';
-  final mockedAuthor = 'Some Name';
+  final mockedTitle = 'Title';
+  final mockedAuthor = 'Name';
   final mockedIcon =
       'https://images.unsplash.com/photo-1664393633748-19ed89efdb4d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjc4ODZ8MHwxfGFsbHw1fHx8fHx8Mnx8MTY2NDQzNzI4OQ&ixlib=rb-1.2.1&q=80&w=200';
 

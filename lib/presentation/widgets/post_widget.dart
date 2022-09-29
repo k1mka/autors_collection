@@ -23,6 +23,7 @@ class PostWidget extends StatelessWidget {
                 model.title,
                 style: const TextStyle(fontSize: 20),
               ),
+              const SizedBox(width: 8),
               Text(model.author, style: const TextStyle(fontSize: 20)),
             ],
           ),
